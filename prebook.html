@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+           function loading()
+            {
+                let a=true;
+                var x=document.getElementById("mail").value;
+                var atpos=x.indexOf("@");
+                var dotpos=x.indexOf(".")
+                if(x=="")
+                {
+                    document.getElementById("message").innerHTML="*required";
+                    a=false;
+                }
+                else if(atpos<1 || atpos==x.length-1)
+                {
+                    document.getElementById("message").innerHTML="Invalid entry";
+                    a=false;
+                }
+                else if((dotpos-atpos)<2)
+                {
+                    document.getElementById("message").innerHTML="Invalid entry";
+                    a=false;
+                }
+                return a;
+            }
+        </script>
+    </head>
+    <body >
+        <br>
+        <br>
+        <br>
+        <br>
+        <br><center>
+            <div style="margin: 0 auto;margin-top: 100px; background-color: turquoise;border-radius: 10px;width: 30%;height: 40%;border: 2px solid darkblue;">
+                <br>
+                <br>
+               <form action="conformatiom.html" onsubmit="return loading()">
+                   <b >Enter your mail id :</b>
+                   <span id="message" style="color: red;font-size: small;"></span>
+                   <br>
+                   <br><input id="mail" style="border-top: none;border-left: none;border-right: none;background-color: turquoise;" placeholder="abcd@gmail.com" maxlength="30">
+                   <br>
+                   <br>
+                   <input style="background-color: darkblue;color: white;border-radius: 5px;" type="submit">
+                   <br>
+                   <br>
+                   <br>
+               </form> 
+            </div>
+        </center>
+        
+    </body>
+</html>

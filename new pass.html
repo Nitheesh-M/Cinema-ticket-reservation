@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <title>new password</title>
+        <link rel="stylesheet" href="new_pass.css" type="text/css">
+        <script type = "text/javascript">
+          function validate(){
+            var pw=document.getElementById("password").value;
+            var cpw=document.getElementById("cpassword").value;
+            if(pw=="")
+            {
+                document.getElementById("passworde").innerHTML="**Fill this**";
+                return false;
+            }
+            else if (pw.length<8)
+            {
+                document.getElementById("passworde").innerHTML="**length of the password should be greater than 8**";
+                return false;
+            }
+            else if (pw.search(/[0-9]/)==-1)
+            {
+                document.getElementById("passworde").innerHTML="**password should contain atleast a number**";
+                return false;
+            }
+            else if (pw.search(/[A-Z]/)==-1)
+            {
+                document.getElementById("passworde").innerHTML="**password should contain atleast a uppercase alphabet**";
+                return false;
+            }
+            else if (pw.search(/[a-z]/)==-1)
+            {
+                document.getElementById("passworde").innerHTML="**password should contain atleast a lowercase alphabet**";
+                return false;
+            }
+             else if (pw.search(/[\@\#\$ \%\^\&\*\(\)\_\-\+\=\<\, \>\?]/)==-1){
+                document.getElementById("passworde").innerHTML="**password should contain atleast a special symbol**";
+                return false;
+            }
+            else{
+                document.getElementById("passworde").innerHTML="";
+            }
+            if(cpw=="")
+            {
+                document.getElementById("cpassworde").innerHTML="**Fill this**";
+                return false;
+            }
+            else if (pw!=cpw){
+                document.getElementById("cpassworde").innerHTML="**password doesn't match**";
+                return false;
+                
+            }
+             else{
+               alert("password changed");
+                return true;
+            }               
+           }                         
+        </script>
+    </head>
+    <body>
+            <div class="newpassword" ><br><br><br><br><center><h3>GET YOUR NEW PASSWORD</h3></center><br>
+                    <form method ="post" ID="new pass" action="login page.html" onsubmit="return validate()">
+                                    <table cellpadding="9">
+                                    <tr><td><label>Enter new password   :</label></td><td><input type ="password" name="tesxtfeild2" id="password"><span  id="passworde" style="color: red; font-size: 18px;"></span></td></tr>
+                                    <tr><td><label>Reenter your new password :</label></td><td><input type ="password" name="tesxtfeild3"  id="cpassword"><span  id="cpassworde" style="color: red; font-size: 18px;"></span></td></tr>
+                                    <tr></tr><tr></tr><tr><td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="submit" id="submit" name="Submit" value="Submit" /></label></td></tr>
+                                    <tr><td colspan="2"><center><h5> CLICK HERE TO GO TO SIGNUP <a href="sign up form.html" >SIGNUP HERE</a></h5></center></td></tr>
+                                    </table>
+                    </form>
+            </div>
+            
+    </body>
+</HTML>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            otp
+        </title>
+        <link rel="stylesheet" href="cssfirst.css">
+        <script>
+            var timer=45;
+            function loading1(){
+                var a=true;
+                var y=document.getElementById("otp").value;
+                if(y=="")
+                {
+                    document.getElementById("message").innerHTML="*required";
+                    a=false;
+                }
+                else if(y.length!=4 && y.length!=0)
+                {   
+                    document.getElementById("message").innerHTML="*invalid";
+                    a=false;
+                }
+                return a;
+            }
+            function onlyNumberKey(evt)
+            {
+                var ASCIICode=evt.keyCode;
+                if (ASCIICode < 48 || ASCIICode > 57)
+                return false;
+                return true;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div class="div">
+            <br>
+            <center><b class="heading">OTP---One Time Password</b></center>
+            <br>
+            <hr>
+            <form method="POST" onsubmit="return loading1()" class="left" action="pay_s.html">
+                <br>
+                <b>OTP sent to your mobile number - xxxxxxxxxx </b>
+                <br>
+                <br>
+                <b>Enter Otp :</b><span id="message" class="warning"></span>
+                <br>
+                <br>
+                <input type="text"  id="otp" placeholder="X  X  X  X" onkeypress="return onlyNumberKey(event)" >
+                <br/>
+                <br>
+                <br>
+                <input type="reset" style="border-radius: 15px;color: white;background-color: darkblue;height: 30px;width: 100px;">
+                <input type="submit" value="Next" style="margin-left: 10px;border-radius: 15px;color: white;background-color: darkblue;height: 30px;width: 100px;">
+                <input type="button" id="resend" onclick="myStopFunction()" value="Resend otp" style="margin-left: 10px;border-radius: 15px;color: white;background-color: darkblue;height: 30px;width: 100px;">
+                <span id="timing" class="warning"></span>
+                <br>
+                <br>
+            </form>
+        </div>
+    </body>
+</html>

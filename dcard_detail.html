@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Card_details</title>
+        <link rel="stylesheet" href="cssfirst.css">
+        <script>
+            setTimeout(month,0);
+            function month()
+            {
+                var today = new Date();
+                var mm = today.getMonth()+1;
+                var yyyy = today.getFullYear();
+                if(mm<10){
+                mm='0'+mm;
+            } 
+            today = yyyy+'-'+mm;
+            document.getElementById("value6").setAttribute("min",today);
+            }
+            function loading2(){
+                var a=true;
+                var x=document.getElementById("value1").value;
+                if(x=="")
+                {
+                    document.getElementById("required1").innerHTML="*required";
+                    a=false;
+                }
+                else
+                {
+                    document.getElementById("required1").innerHTML="";
+                }
+                if(document.getElementById("value5").value.length==0)
+                {
+                    document.getElementById("required3").innerHTML="*required";
+                    a=false;
+                }
+                else if(document.getElementById("value5").value.length!=3 && document.getElementById("value5").value.length!=0)
+                {
+                    document.getElementById("required3").innerHTML="*invalid";
+                    a=false;
+                }
+                else
+                {
+                    document.getElementById("required3").innerHTML="";
+                }
+                if(document.getElementById("value2").value.length==0)
+                {
+                    document.getElementById("required2").innerHTML="*required";
+                    a=false;
+                }
+                else if(document.getElementById("value2").value.length!=16 && document.getElementById("value2").value.length!=0)
+                {
+                    document.getElementById("required2").innerHTML="*invalid";
+                    a=false;
+                }
+                else
+                {
+                    document.getElementById("required2").innerHTML="";
+                }
+                if(document.getElementById("value6").value.length==0)
+                {
+                    document.getElementById("required4").innerHTML="*required";
+                    a=false;
+                }
+                else
+                {
+                    document.getElementById("required4").innerHTML="";
+                }
+
+                return a;
+            }
+            function onlyNumberKey(evt)
+            {
+            var ASCIICode=evt.keyCode;
+            if (ASCIICode < 48 || ASCIICode > 57)
+            return false;
+            return true;
+            }
+            function onlyAlphaKey(evt)
+            {
+            var ASCIICode=evt.keyCode;
+            if ((ASCIICode >= 65 && ASCIICode <= 90) || (ASCIICode >= 97 && ASCIICode <= 122) || ASCIICode==32)
+            return true;
+            return false;
+            }
+        </script>
+    </head>
+    <body>
+        <table class=tabledec cellspacing="0" >
+            <tr>
+                <td style="background-color:cornflowerblue;width: 400px;border-right:3px solid darkblue;">
+                    <center> <img src="debitcard.png"></center>
+                </td>
+                <td style="background-color: white;width: 400px;">
+                 <br>
+                 <center><b class="heading">CARD DETAILS</b></center>
+                 <br>
+                 <hr>  
+                 <form class="left" method="post" onsubmit="return loading2()" action="otp.html">
+                     <br/>
+                     <b>Card Holder Name:</b><span id="required1" class="warning" ></span>
+                     <br>
+                     <br>
+                     <input id="value1" type="text" maxlength="50" placeholder="Enter card holder name" style="width: 300px;" onkeypress="return onlyAlphaKey(event)">
+                     <br/>
+                     <br>
+                     <br>
+                     <b>Card Number:</b><span id="required2" class="warning"></span>
+                     <br>
+                     <br>
+                     <input id="value2" type="text" placeholder="X X X X - X X X X - X X X X - X X X X" style="width: 250px;" onkeypress="return onlyNumberKey(event)">
+                     <br/>
+                     <br>
+                     <br>
+                     <b>CVV:</b><span id="required3" class="warning"></span>
+                     <br>
+                     <br>
+                     <input id="value5"  type="text" name="cvv" placeholder="cvv" style="width: 50px;" onkeypress="return onlyNumberKey(event)">
+                     <br/>
+                     <br>
+                     <br>
+                     <b>Card Expiry Date:</b><span id="required4" class="warning"></span>
+                     <br>
+                     <br>
+                     <input id="value6" type="month" name="expdate" >
+                     <br/>
+                     <br>
+                     <br>
+                     <input type="reset" style="border-radius: 15px;color: white;background-color: darkblue;height: 30px;width: 100px;">
+                     <input type="submit" style="margin-left: 10px;border-radius: 15px;color: white;background-color: darkblue;height: 30px;width: 100px;">
+                 </form>   
+                 <br>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

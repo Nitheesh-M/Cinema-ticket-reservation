@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+}
+
+
+/* Left column (menu) */
+.left {
+  
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="row">
+  <div class="left"  style=" background-color:rgb(103, 158, 165)">
+    <h2>Type a District</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="Ariyalur.html" target="_top">Ariyalur</a></li>
+      <li><a href="Chengalpattu.html" target="_top">Chengalpattu</a></li>
+      <li><a href="Chennai.html" target="_top">Chennai</a></li>
+      <li><a href="Coimbatore.html" target="_top">Coimbatore</a></li>
+      <li><a href="Cuddalore.html" target="_top">Cuddadalore</a></li>
+      <li><a href="Dharmapuri.html" target="_top">Dharmapuri</a></li>
+      <li><a href="Dindigul.html" target="_top">Dindugul</a></li>
+      <li><a href="Erode.html" target="_top">Erode</a></li>
+      <li><a href="Kallakurichi.html" target="_top">Kallakurichi</a></li>
+      <li><a href="Kancheepuram.html" target="_top">Kancheepuram</a></li>
+      <li><a href="Kanyakumari.html" target="_top">Kanyakumari</a></li>
+      <li><a href="Karur.html" target="_top">Karur</a></li>
+      <li><a href="Krishnagiri.html" target="_top">Krishnagiri</a></li>
+      <li><a href="Madurai.html" target="_top">Madurai</a></li>
+      <li><a href="Nagapattinam.html" target="_top">Nagapattinam</a></li>
+      <li><a href="Namakkal.html" target="_top">Namakkal</a></li>
+      <li><a href="Pudukkottai.html" target="_top">Pudukkottai</a></li>
+      <li><a href="Ramanathapuram.html" target="_top">Ramanathapuram</a></li>
+      <li><a href="Ranipet.html" target="_top">Ranipet</a></li>
+      <li><a href="Salem.html" target="_top">Salem</a></li>
+      <li><a href="Sivagangai.html" target="_top">Sivagangai</a></li>
+      <li><a href="Tenkasi.html" target="_top">Tenkasi</a></li>
+      <li><a href="Thanjavur.html" target="_top">Thanjavur</a></li>
+      <li><a href="Theni.html" target="_top">Theni</a></li>
+      <li><a href="Thiruchirrapalli.html" target="_top">Thiruchirrapalli</a></li>
+      <li><a href="Thiruvallur.html" target="_top">Thiruvallur</a></li>
+      <li><a href="Thiruvannamalai.html" target="_top">Thiruvannamalai</a></li>
+      <li><a href="Thoothukudi.html" target="_top">Thoothukudi</a></li>
+      <li><a href="Tirunelveli.html" target="_top">Tirunelveli</a></li>
+      <li><a href="Tirupattur.html" target="_top">Tirupattur</a></li>
+      <li><a href="Tiruppur.html" target="_top">Tiruppur</a></li>
+      <li><a href="Tiruvarur.html" target="_top">Tiruvarur</a></li>
+      <li><a href="Vellore.html" target="_top">Vellore</a></li>
+      <li><a href="Villupuram.html" target="_top">Villupuram</a></li>
+      <li><a href="Virudhunagar.html" target="_top">Virudhunagar</a></li>
+    </ul>
+  </div>
+  
+ 
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

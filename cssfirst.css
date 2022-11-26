@@ -1,0 +1,62 @@
+.left{
+    margin-left: 50px;
+
+}
+body{
+    background-image: url(background.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div{
+    margin:0 auto;
+    margin-top: 100px;
+    background-color: white;
+    border:3px solid darkblue;
+    border-radius: 30px;
+    width: 40%;
+    vertical-align: 0 auto;
+}
+a{
+    text-decoration: none;
+    font-size: x-large;
+    font-weight:500;
+    color: black;
+}
+a:hover{
+    background-color:black;
+    color: white;
+}
+a:active{
+    text-decoration: underline;
+    background-color: yellow;
+    color: red;
+}
+.heading{
+    font-size:x-large; 
+    color:darkblue;
+}
+hr{
+    height: 1.5px;
+    background-color: darkblue;
+}
+li{
+    margin-top: 25px;
+    color:darkblue;
+}
+.tabledec{
+    border: 3px solid darkblue;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.netbanking{
+    margin-left: 30px;
+}
+.warning{
+    font-size: 10px;
+    color: red;
+}
